@@ -50,37 +50,21 @@ class DataCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: SvgPicture.asset(imageUrl),
-                    ),
-                    flex: 2,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
+                      padding: EdgeInsets.only(left:20, right: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(heading,
                               style: GoogleFonts.montserrat(
-                                  fontSize: 25, color: Colors.white)),
+                                  fontSize: 30, color: Colors.white)),
                           Text(subHeading,
                               style: GoogleFonts.montserrat(
-                                  fontSize: 15, color: Color(0xFFDCDCDC)))
+                                  fontSize:20, color: Color(0xFFDCDCDC))),
                         ],
                       ),
                     ),
                     flex: 6,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding:
-                      EdgeInsets.only(top: 8.0, bottom: 8.0, right: 8.0),
-                      child: SvgPicture.asset('assets/svg/right-icon-arrow.svg',
-                          color: Colors.white),
-                    ),
-                    flex: 1,
                   ),
                 ],
               ),
