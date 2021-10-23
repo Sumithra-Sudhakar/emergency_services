@@ -31,10 +31,12 @@ class Home extends StatelessWidget {
 
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Center(
                     child: SizedBox(
-                      width:MediaQuery.of(context).size.width*0.2,
+                      //width:MediaQuery.of(context).size.width*0.2,
                     ),
                   ),
                   ElevatedButton(onPressed: (){
