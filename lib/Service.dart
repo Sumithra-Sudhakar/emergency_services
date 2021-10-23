@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ServiceBody.dart';
 
 class Service extends StatelessWidget {
   const Service({Key? key}) : super(key: key);
@@ -9,8 +10,10 @@ class Service extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          title: Center(child: Text("Whose help do you need now?")),
           backgroundColor:Color(0xFFA0937D) ,
         ),
+        backgroundColor: Color(0XFFF6E6CB),
         drawer: Drawer(
           child: Container(
             padding: EdgeInsets.only(top:50.0),
@@ -21,7 +24,9 @@ class Service extends StatelessWidget {
               ],
             ),
           ),
+
         ),
+        body:    ServiceBody()
       ),
     );
 
@@ -35,7 +40,7 @@ makeProfileAvatar(){
     children: [
       CircleAvatar(
         radius: 60.0,
-        backgroundImage: NetworkImage('https://cdn.imgbin.com/23/22/24/imgbin-user-profile-avatar-woman-icon-girl-avatar-woman-illustration-kHYcNyftbXz4rQG1TDtsHcyi1.jpg'),
+        backgroundImage:  AssetImage('police.jpg'),
       ),
       SizedBox(height: 20),
       Center(
@@ -91,6 +96,7 @@ makeProfileAvatar(){
           label: Text('Log Out'),
           onPressed: () {
 
+
           },
           icon: Icon(Icons.logout),
         ),
@@ -98,3 +104,6 @@ makeProfileAvatar(){
     ],
   );
 }
+
+
+
