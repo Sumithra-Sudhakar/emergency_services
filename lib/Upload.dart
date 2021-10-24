@@ -44,6 +44,8 @@ class _ReportCrimeState extends State<ReportCrime> {
 
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +81,10 @@ class _ReportCrimeState extends State<ReportCrime> {
                   globals.buttonColor),
             ),
             GestureDetector(
-              onTap: ()=>getLocation(),
+              onTap: ()=>{getLocation(),
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Your location has been updated. Thanks!"),
+              ));},
               child: DataCard(
                   'Share Location',
                   'Location will be shared with law enforcement',

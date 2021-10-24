@@ -32,6 +32,8 @@ dependencies:
 
   image_picker:
   firebase_auth: ^0.6.2+1
+  geolocator:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:

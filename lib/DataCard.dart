@@ -45,17 +45,17 @@ class DataCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left:20, right: 10),
+                      padding: EdgeInsets.only(left:20, right: 10,top: 100,bottom:50),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(heading,
                               style: GoogleFonts.montserrat(
-                                  fontSize: 30, color: Colors.white)),
+                                  fontSize:20, color: Colors.white)),
                           Text(subHeading,
                               style: GoogleFonts.montserrat(
-                                  fontSize:20, color: Color(0xFFDCDCDC))),
+                                  fontSize:15, color: Color(0xFFDCDCDC))),
                         ],
                       ),
                     ),
