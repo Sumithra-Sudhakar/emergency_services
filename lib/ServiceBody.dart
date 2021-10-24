@@ -13,7 +13,7 @@ class _ServiceBodyState extends State<ServiceBody> {
     return  MaterialApp(
 debugShowCheckedModeBanner: false,
        home:  Scaffold(
-         backgroundColor: Color(0XFFF6E6CB),
+         backgroundColor: Color(0xffCBBBE6),
          body: SingleChildScrollView(
               child: Center(
                 child: Column(

@@ -34,7 +34,7 @@ class _State extends State<SignUp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xffF6E6CB),
+        backgroundColor: Color(0xFFCBBBE6),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
@@ -51,7 +51,7 @@ class _State extends State<SignUp> {
                         fontStyle: FontStyle.normal,
                         fontSize: 50,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff6C4A4A),
+                        color: Color(0xff7833FE),
                       ),
                     )),
                 Center(
@@ -69,7 +69,7 @@ class _State extends State<SignUp> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: const BorderSide(
-                              color: Color(0xffEC524B), width: 2.0),
+                              color: Color(0xff7833FE), width: 2.0),
                         ),
                         hintText: 'Enter a nice, unique username!',
                       ),
@@ -93,7 +93,7 @@ class _State extends State<SignUp> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: const BorderSide(
-                              color: Color(0xffEC524B), width: 2.0),
+                              color: Color(0xff7833FE), width: 2.0),
                         ),
                         hintText: 'E-mail?',
                       ),
@@ -118,7 +118,7 @@ class _State extends State<SignUp> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: const BorderSide(
-                              color: Color(0xffEC524B), width: 2.0),
+                              color: Color(0xff7833FE), width: 2.0),
                         ),
                         hintText: 'Secret, super safe password here.',
                       ),
@@ -141,7 +141,7 @@ class _State extends State<SignUp> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: const BorderSide(
-                              color: Color(0xffEC524B), width: 2.0),
+                              color: Color(0xff7833FE), width: 2.0),
                         ),
                         hintText: 'Where do you live?',
                       ),
@@ -165,7 +165,7 @@ class _State extends State<SignUp> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: const BorderSide(
-                              color: Color(0xffEC524B), width: 2.0),
+                              color: Color(0xff7833FE), width: 2.0),
                         ),
                         hintText: 'Phone number :)',
                       ),
@@ -180,7 +180,7 @@ class _State extends State<SignUp> {
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0)),
-                      primary: Color(0xffA0937D),
+                      primary: Color(0xff7833FE),
                       padding: EdgeInsets.all(15),
                       onPrimary: Color(0xffF3EAC2),
                       elevation: 5,
@@ -212,12 +212,12 @@ class _State extends State<SignUp> {
                       FlatButton(
                         child: Container(
                           child: Text(
-                            'Sign in',
+                            'Login in',
                             style: GoogleFonts.gentiumBasic(
                               fontStyle: FontStyle.normal,
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xffC68B59),
+                              color: Color(0xff7833FE),
                             ),
                           ),
                         ),
