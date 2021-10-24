@@ -33,6 +33,7 @@ dependencies:
   image_picker:
   geolocator:
   url_launcher:
+  firebase_storage:
 
 dev_dependencies:
   flutter_test:

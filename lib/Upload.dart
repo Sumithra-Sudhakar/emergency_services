@@ -1,7 +1,9 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:emergency_services/DataCard.dart';
 import 'package:emergency_services/global.dart' as globals;
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
@@ -19,6 +21,24 @@ class _ReportCrimeState extends State<ReportCrime> {
 
   File? image,cameraImage;
   String? latitude,longitude;
+
+  Future<void> uploadFile(String filePath) async {
+
+    File file = File(filePath);
+
+    try {
+
+      Random random = new Random();
+      int fileId = random.nextInt(100);
+      await FirebaseStorage.instance
+          .ref("uploads/$fileId.jpeg")
+          .putFile(file);
+    } on FirebaseException catch (e) {
+      // e.g, e.code == 'canceled'
+
+      // TODO: Do something with this exception
+    }
+  }
 
   void pickImage() async{
     final image = await ImagePicker().pickImage(source:  ImageSource.gallery);
