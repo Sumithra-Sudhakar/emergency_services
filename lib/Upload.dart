@@ -64,7 +64,40 @@ class UploadImage extends StatefulWidget {
 class _UploadImageState extends State<UploadImage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Container(
+          child: Column(
+        children: [
+          Container(
+              child: Text(
+            "Item Image",
+            style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+          )),
+          SimpleDialogOption(
+            child: Text(
+              "Capture with Camera",
+              style: TextStyle(color: Colors.green),
+            ),
+            onPressed: () {},
+          ),
+          SimpleDialogOption(
+            child: Text(
+              "Select from Gallery",
+              style: TextStyle(color: Colors.green),
+            ),
+            onPressed: (){},
+          ),
+          SimpleDialogOption(
+              child: Text(
+                "Cancel",
+                style: TextStyle(color: Colors.green),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
+        ],
+      )),
+    );
   }
 }
 
