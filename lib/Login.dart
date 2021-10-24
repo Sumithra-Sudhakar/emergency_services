@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'SignUp.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Service.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -11,11 +14,34 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  //init firebase
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          return SomethingWentWrong();
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return Login();
+        }
+
+        return Loading();
+      },
+    );
+  }
+
+  MaterialApp Login() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -187,3 +213,14 @@ class _LoginState extends State<Login> {
     );
   }
 }
+
+
+Future<UserCredential> signIn() async {
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: "barry.allen@example.com",
+        password: "SuperSecretPassword!"
+    );
+
+    return await FirebaseAuth.instance.signInWithEmailAndPassword(userCredential);
+}
+
