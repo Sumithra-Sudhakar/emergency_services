@@ -6,7 +6,6 @@ import 'package:emergency_services/global.dart' as globals;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -116,17 +115,17 @@ class _ReportCrimeState extends State<ReportCrime> {
     );
   }
 
- void getLocation() async{
-    var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-    var lat = position.latitude;
-    var long = position.longitude;
-
-
-    setState(() {
-      latitude = "$lat";
-      longitude = "$long";
-    });
- }
+ // void getLocation() async{
+ //    var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+ //    var lat = position.latitude;
+ //    var long = position.longitude;
+ //
+ //
+ //    setState(() {
+ //      latitude = "$lat";
+ //      longitude = "$long";
+ //    });
+ // }
 
 
 }
