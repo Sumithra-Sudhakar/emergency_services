@@ -7,7 +7,7 @@ void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: SafeArea(
-      child: Service(),
+      child: Home(),
     ),
   ));
 }

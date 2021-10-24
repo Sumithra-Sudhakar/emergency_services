@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'SignUp.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Service.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -109,7 +110,7 @@ class _LoginState extends State<Login> {
                             label: Text('Log In'),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Login()));
+                                  builder: (context) => Service()));
                             },
                             icon: Icon(Icons.assignment_turned_in),
                           ),
