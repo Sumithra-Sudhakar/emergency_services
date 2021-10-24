@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ServiceBody.dart';
+import 'Home.dart';
 
 class Service extends StatelessWidget {
   const Service({Key? key}) : super(key: key);
@@ -11,13 +12,13 @@ class Service extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Center(child: Text("Whose help do you need now?")),
-          backgroundColor:Color(0xFFA0937D) ,
+          backgroundColor:Color(0xff7833FE) ,
         ),
-        backgroundColor: Color(0XFFF6E6CB),
+        backgroundColor: Color(0xffCBBBE6),
         drawer: Drawer(
           child: Container(
             padding: EdgeInsets.only(top:50.0),
-            decoration: BoxDecoration(color: Color(0xFFA0937D)),
+            decoration: BoxDecoration(color: Color(0xffCBBBE6)),
             child: Column(
               children: [
                 Expanded(child:  makeProfileAvatar()),
@@ -48,7 +49,7 @@ makeProfileAvatar(){
           "Sumithra Sudhakar",
           style: TextStyle(
               fontSize: 20,
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -57,7 +58,7 @@ makeProfileAvatar(){
         child: Text("Coimbatore, India",
           style: TextStyle(
               fontSize: 18,
-              color: Colors.white70,
+              color: Colors.black,
               fontWeight: FontWeight.normal
 
           ),
@@ -68,8 +69,8 @@ makeProfileAvatar(){
           "ID number: 1234567890",
           style: TextStyle(
               fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
+              color: Colors.black,
+
           ),
         ),
 
@@ -78,8 +79,8 @@ makeProfileAvatar(){
           "Points:250",
           style: TextStyle(
               fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
+              color: Colors.black,
+
           ),
 
       ),
@@ -89,12 +90,14 @@ makeProfileAvatar(){
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
-            primary: Color(0xFFA0937D),
+            primary: Color(0xff7833FE),
             padding: EdgeInsets.all(15),
             elevation: 5,
           ),
           label: Text('Log Out'),
           onPressed: () {
+
+
 
 
           },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Upload.dart';
 
 class ServiceBody extends StatefulWidget {
   const ServiceBody({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _ServiceBodyState extends State<ServiceBody> {
     return  MaterialApp(
 debugShowCheckedModeBanner: false,
        home:  Scaffold(
-         backgroundColor: Color(0XFFF6E6CB),
+         backgroundColor: Color(0xffCBBBE6),
          body: SingleChildScrollView(
               child: Center(
                 child: Column(
@@ -24,7 +25,9 @@ debugShowCheckedModeBanner: false,
 SizedBox(
   height: MediaQuery.of(context).size.height*0.1,
 ),
-                    ElevatedButton(onPressed:  (){},
+                    ElevatedButton(onPressed:  (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ReportCrime()));
+                    },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                           shape: RoundedRectangleBorder(
@@ -54,7 +57,7 @@ SizedBox(
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.1,
                     ),
-                    ElevatedButton(onPressed:  (){},
+                    ElevatedButton(onPressed:  (){  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ReportCrime()));},
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                         shape: RoundedRectangleBorder(
@@ -84,7 +87,7 @@ SizedBox(
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.1,
                     ),
-                    ElevatedButton(onPressed:  (){},
+                    ElevatedButton(onPressed:  (){  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ReportCrime()));},
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                         shape: RoundedRectangleBorder(

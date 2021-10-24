@@ -3,6 +3,7 @@ import 'package:emergency_services/Login.dart';
 import 'package:emergency_services/SignUp.dart';
 
 class Home extends StatelessWidget {
+
   const Home({Key? key}) : super(key: key);
 
   @override
@@ -11,23 +12,27 @@ class Home extends StatelessWidget {
       title: "DO NOT PANIC",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0XFFF6E6CB),
+        backgroundColor: Colors.white,
         body: Container(
           padding: EdgeInsets.all(10),
 
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+
+
             children: [
-              Center(
+              Image.asset('assets/home.png',height: 300,width: 500),
+             SizedBox(
+               height:MediaQuery.of(context).size.height*0.02 ,
+             ) ,
+            Center(
                 child: Text(
                   "DO NOT PANIC!",
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold,color: Color(0xFFA0937D)) ,
+                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold,color: Colors.black) ,
                 ),
 
               ),
               SizedBox(
-                height: 50,
+                height: MediaQuery.of(context).size.height*0.2,
 
               ),
               Row(
@@ -48,7 +53,7 @@ class Home extends StatelessWidget {
                           borderRadius: BorderRadius.circular( 10.0),
 
                         ),
-                        primary: Color(0xFFA0937D),
+                        primary: Color(0xFF7833FE),
                         padding: EdgeInsets.all(15),
                         elevation: 5,
                       ),
@@ -63,7 +68,7 @@ class Home extends StatelessWidget {
 
                   ),
                   SizedBox(
-                    width: 120,
+                    width: MediaQuery.of(context).size.width*0.25,
                   ),
                   ElevatedButton(onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
@@ -73,7 +78,7 @@ class Home extends StatelessWidget {
                           borderRadius: BorderRadius.circular( 10.0),
 
                         ),
-                        primary: Color(0xFFA0937D),
+                        primary: Color(0xFF7833FE),
                         padding: EdgeInsets.all(15),
                         elevation: 5,
                       ),

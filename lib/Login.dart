@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'SignUp.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Service.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _LoginState extends State<Login> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xffF6E6CB),
+        backgroundColor: Color(0xffCBBBE6),
         resizeToAvoidBottomInset: false,
         body: Stack(
           children: <Widget>[
@@ -40,7 +41,7 @@ class _LoginState extends State<Login> {
                                 fontStyle: FontStyle.normal,
                                 fontSize: 50,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xff6C4A4A),
+                                color: Color(0xff7833FE),
                               ),
                             )),
                         SizedBox(
@@ -49,7 +50,7 @@ class _LoginState extends State<Login> {
                         Container(
                           padding: EdgeInsets.all(10),
                           child: TextField(
-                            cursorColor: Color(0xffEC524B),
+                            cursorColor: Color(0xff7833FE),
                             controller: nameController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -61,7 +62,7 @@ class _LoginState extends State<Login> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
                                 borderSide: const BorderSide(
-                                    color: Color(0xffEC524B), width: 2.0),
+                                    color: Color(0xff7833FE), width: 2.0),
                               ),
                               labelText: 'Username',
                             ),
@@ -73,7 +74,7 @@ class _LoginState extends State<Login> {
                         Container(
                           padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                           child: TextField(
-                            cursorColor: Color(0xffEC524B),
+                            cursorColor: Color(0xff7833FE),
                             obscureText: true,
                             controller: passwordController,
                             decoration: InputDecoration(
@@ -81,13 +82,13 @@ class _LoginState extends State<Login> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
                                 borderSide: const BorderSide(
-                                    color: Color(0xffEC524B), width: 2.0),
+                                    color: Color(0xff7833FE), width: 2.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
                                 borderSide: const BorderSide(
-                                    color: Color(0xffEC524B), width: 2.0),
+                                    color: Color(0xff7833FE), width: 2.0),
                               ),
                               labelText: 'Password',
                             ),
@@ -101,7 +102,7 @@ class _LoginState extends State<Login> {
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0)),
-                              primary: Color(0xffA0937D),
+                              primary: Color(0xff7833FE),
                               padding: EdgeInsets.all(15),
                               onPrimary: Color(0xffF3EAC2),
                               elevation: 5,
@@ -109,7 +110,7 @@ class _LoginState extends State<Login> {
                             label: Text('Log In'),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Login()));
+                                  builder: (context) => Service()));
                             },
                             icon: Icon(Icons.assignment_turned_in),
                           ),
@@ -157,13 +158,13 @@ class _LoginState extends State<Login> {
                                           fontStyle: FontStyle.normal,
                                           fontSize: 20,
                                           fontWeight: FontWeight.w400,
-                                          color: Color(0xffC68B59),
+                                          color: Color(0xff7833FE),
                                         )),
                                     Container(
                                       width: 10,
                                     ),
                                     Icon(Icons.arrow_drop_down_circle_outlined,
-                                        color: Color(0xffC68B59))
+                                        color: Color(0xff7833FE))
                                   ],
                                 ),
                               ),
