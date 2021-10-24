@@ -31,6 +31,8 @@ dependencies:
   google_fonts:
 
   image_picker:
+  geolocator:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:

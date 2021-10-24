@@ -4,13 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class DataCard extends StatelessWidget {
-  DataCard(this.heading, this.subHeading, this.imageUrl, this.route,
+  DataCard(this.heading, this.subHeading, this.imageUrl,
       this.startingColor, this.endingColor);
 
   final String heading;
   final String subHeading;
   final String imageUrl;
-  final Widget route;
   final Color startingColor;
   final Color endingColor;
 
@@ -42,10 +41,6 @@ class DataCard extends StatelessWidget {
               focusColor: Color(0x86FFFFFF),
               highlightColor: Color(0x3CFFFFFF),
               borderRadius: BorderRadius.circular(20),
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => route));
-              },
               child: Row(
                 children: [
                   Expanded(

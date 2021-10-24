@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:emergency_services/DataCard.dart';
 import 'package:emergency_services/global.dart' as globals;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ReportCrime extends StatefulWidget {
   const ReportCrime({Key? key}) : super(key: key);
@@ -12,9 +17,34 @@ class ReportCrime extends StatefulWidget {
 
 class _ReportCrimeState extends State<ReportCrime> {
 
+  File? image,cameraImage;
+  String? latitude,longitude;
+
+  void pickImage() async{
+    final image = await ImagePicker().pickImage(source:  ImageSource.gallery);
+
+    if(image==null) return;
+
+    final imageTemporary = File(image.path);
+    setState(() {
+      this.image = imageTemporary;
+    });
+
+  }
+
+  void pickImageFromCamera() async{
+    final image = await ImagePicker().pickImage(source:  ImageSource.camera);
+
+    if(image==null) return;
+
+    final imageTemporary = File(image.path);
+    setState(() {
+      this.cameraImage = imageTemporary;
+    });
+
+  }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -30,23 +60,33 @@ class _ReportCrimeState extends State<ReportCrime> {
             SizedBox(
               height: 30,
             ),
-            DataCard(
-                'Upload picture',
-                'The picture will be useful for law enforcement.',
-                '/assets/image_01.png',
-                UploadImage(),
-                globals.textColor,
-                globals.buttonColor),
-            SizedBox(
-              height: 30,
+            GestureDetector(
+              onTap: ()=> pickImageFromCamera(),
+              child: DataCard(
+                  'Upload picture',
+                  'The picture will be useful for law enforcement.',
+                  '/assets/image_01.png',
+                  globals.textColor,
+                  globals.buttonColor),
             ),
-            DataCard(
-                'Share Location',
-                'Location will be shared with law enforcement',
-                '/assets/image_02.png',
-                Location(),
-                globals.textColor,
-                globals.buttonColor),
+            GestureDetector(
+              onTap: ()=> pickImage(),
+              child: DataCard(
+                  'Upload from gallery',
+                  'The picture will be useful for law enforcement.',
+                  '/assets/image_01.png',
+                  globals.textColor,
+                  globals.buttonColor),
+            ),
+            GestureDetector(
+              onTap: ()=>getLocation(),
+              child: DataCard(
+                  'Share Location',
+                  'Location will be shared with law enforcement',
+                  '/assets/image_02.png',
+                  globals.textColor,
+                  globals.buttonColor),
+            ),
             SizedBox(
               height: 30,
             )
@@ -55,65 +95,19 @@ class _ReportCrimeState extends State<ReportCrime> {
       ),
     );
   }
+
+ void getLocation() async{
+    var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+    var lat = position.latitude;
+    var long = position.longitude;
+
+
+    setState(() {
+      latitude = "$lat";
+      longitude = "$long";
+    });
+ }
+
+
 }
 
-class UploadImage extends StatefulWidget {
-  const UploadImage({Key? key}) : super(key: key);
-
-  @override
-  _UploadImageState createState() => _UploadImageState();
-}
-
-class _UploadImageState extends State<UploadImage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Container(
-          child: Column(
-        children: [
-          Container(
-              child: Text(
-            "Item Image",
-            style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-          )),
-          SimpleDialogOption(
-            child: Text(
-              "Capture with Camera",
-              style: TextStyle(color: Colors.green),
-            ),
-            onPressed: () {},
-          ),
-          SimpleDialogOption(
-            child: Text(
-              "Select from Gallery",
-              style: TextStyle(color: Colors.green),
-            ),
-            onPressed: (){},
-          ),
-          SimpleDialogOption(
-              child: Text(
-                "Cancel",
-                style: TextStyle(color: Colors.green),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-        ],
-      )),
-    );
-  }
-}
-
-class Location extends StatefulWidget {
-  const Location({Key? key}) : super(key: key);
-
-  @override
-  _LocationState createState() => _LocationState();
-}
-
-class _LocationState extends State<Location> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
