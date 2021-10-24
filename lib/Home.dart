@@ -27,14 +27,13 @@ class Home extends StatelessWidget {
 
               ),
               SizedBox(
-                height: 50,
+                height: 300,
+                child: Center(child: Text('Space for vector')),
 
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width:MediaQuery.of(context).size.width*0.2,
-                  ),
                   ElevatedButton(onPressed: (){
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Login()));
@@ -59,7 +58,7 @@ class Home extends StatelessWidget {
 
                   ),
                   SizedBox(
-                    width: 120,
+                    width: 60,
                   ),
                   ElevatedButton(onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
