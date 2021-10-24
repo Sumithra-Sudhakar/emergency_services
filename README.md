@@ -10,3 +10,10 @@
 2. https://firebase.flutter.dev/
 
 ## 📱 Screenshots of the app
+![image](https://user-images.githubusercontent.com/23033867/138591009-57ce2d87-08e8-4f02-a5c8-d19684a71272.png)
+
+![image](https://user-images.githubusercontent.com/23033867/138591035-fb877a7a-00f2-42f5-ac06-572d063cd94b.png)
+
+![image](https://user-images.githubusercontent.com/23033867/138591061-59eb46cc-49f5-49c9-ba3b-d5f76e0fd481.png)
+
+
